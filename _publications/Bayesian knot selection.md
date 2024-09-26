@@ -3,7 +3,7 @@ title: "Estimating dose-response curves using splines: a nonparametric Bayesian 
 collection: publications
 category: manuscripts
 permalink: /publication/Bayesian knot selection
-excerpt: 'Master's thesis'
+excerpt: 'Master's Thesis'
 date: 2022-05-31
 venue: 'Communications for Statistical Applications and Methods'
 slidesurl: 'http://academicpages.github.io/files/Bayesian knot selection.pdf'
