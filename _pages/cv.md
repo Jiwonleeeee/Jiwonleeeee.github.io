@@ -11,35 +11,27 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Statistics, University of Cincinnati, May 2026 (expected)
+* M.S. in Statistics, Kyungpook National University, Daegu, South Korea, Aug 2021
+* B.S. in Statistics, Kyungpook National University, Daegu, South Korea, Aug 2019
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* June 2022 - present: Biostatistician - student intern
+  * Cincinnati Children's Hospital
+  * Division of Biostatistics and Epidemiology
+  * Supervisor: [Dr. Lili Ding](https://www.cincinnatichildrens.org/bio/d/lili-ding)
+  * Role description: My advisor and I collaborate with medical doctors on the statistical analysis of their research papers. My responsibilities include, but are not limited to, data cleaning, data visualization, statistical analysis, and report writing. 
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+# Skills
+# ======
+# * Skill 1
+# * Skill 2
+#   * Sub-skill 2.1
+#   * Sub-skill 2.2
+#   * Sub-skill 2.3
+# * Skill 3
 
 Publications
 ======
@@ -47,18 +39,18 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+Research Projects
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+# Teaching
+# ======
+#   <ul>{% for post in site.teaching reversed %}
+#     {% include archive-single-cv.html %}
+#   {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+# Service and leadership
+# ======
+# * Currently signed in to 43 different slack teams
