@@ -23,15 +23,16 @@ Work experience
   * Supervisor: [Dr. Lili Ding](https://www.cincinnatichildrens.org/bio/d/lili-ding)
   * Role description: My advisor and I collaborate with medical doctors on the statistical analysis of their research papers. My responsibilities include, but are not limited to, data cleaning, data visualization, statistical analysis, and report writing. 
 
-  
-# Skills
-# ======
-# * Skill 1
-# * Skill 2
-#   * Sub-skill 2.1
-#   * Sub-skill 2.2
-#   * Sub-skill 2.3
-# * Skill 3
+<!--
+ Skills
+ ======
+ * Skill 1
+ * Skill 2
+   * Sub-skill 2.1
+   * Sub-skill 2.2
+   * Sub-skill 2.3
+ * Skill 3
+-->
 
 Publications
 ======
@@ -45,12 +46,14 @@ Research Projects
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-# Teaching
-# ======
-#   <ul>{% for post in site.teaching reversed %}
-#     {% include archive-single-cv.html %}
-#   {% endfor %}</ul>
-  
-# Service and leadership
-# ======
-# * Currently signed in to 43 different slack teams
+<!--  
+ Teaching
+ ======
+   <ul>{% for post in site.teaching reversed %}
+     {% include archive-single-cv.html %}
+   {% endfor %}</ul>
+
+ Service and leadership
+ ======
+ * Currently signed in to 43 different slack teams
+-->
