@@ -1,7 +1,7 @@
 ---
 title: "Area under the post-surgery pain scores curve"
 collection: talks
-type: "Talk"
+type: "R code"
 permalink: /talks/pain-auc
 venue: "CCHMC"
 date: 2024-09-28
