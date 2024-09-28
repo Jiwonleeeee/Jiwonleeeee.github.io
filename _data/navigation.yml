@@ -8,17 +8,8 @@ main:
   - title: "CV"
     url: /cv/
     
-  - title: "Research Projects"
-    url: /talks/   
-    
   - title: "Publications"
     url: /publications/
 
-  - title: "Guide"
-    url: /markdown/
-
   - title: "Portfolio"
     url: /portfolio/
-        
-  - title: "Blog Posts"
-    url: /year-archive/
