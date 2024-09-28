@@ -1,29 +1,33 @@
 ---
 title: "Area under the post-surgery pain scores curve"
 collection: talks
-type: "R code"
+type: "Internship work"
 permalink: /talks/pain-auc
 venue: "CCHMC"
 date: 2024-09-28
 location: "Cincinnati"
 ---
 
-The area-under-the-curve (AUC) is a common measure to quantify continuous variables recorded over time. Check these papers: 
+The area-under-the-curve (AUC) is a common measure to quantify continuous variables recorded over time. 
+
+Check these papers: 
+
 Cappelleri, J. C., Bushmakin, A. G., Zlateva, G., & Sadosky, A. (2009). Pain responder analysis: use of area under the curve to enhance interpretation of clinical trial results. Pain Practice, 9(5), 348-353.
+
 Andersen, L. P. K., Gögenur, I., Torup, H., Rosenberg, J., & Werner, M. U. (2017). Assessment of postoperative analgesic drug efficacy: method of data analysis is critical. Anesthesia & Analgesia, 125(3), 1008-1013.
 
 Suppose we have a dataset like this:
-| record_id | surgery_dt | painscore_dt | painscore | POD |
-| --------- |---------- | ------------ | --------- | --- |
-| ID1 | 03/22/21 10:31 | 03/22/21 11:40 | 5 | 0 |
-| ID1 | 03/22/21 10:31 | 03/22/21 15:21 | 7 | 0 |
-| ID1 | 03/22/21 10:31 | 03/23/21 09:22 | 6 | 1 |
-| ID1 | 03/22/21 10:31 | 03/24/21 19:22 | 3 | 2 |
-| ⋮ | ⋮| ⋮ | ⋮ | ⋮ |
-| ID10 | 07/15/21 14:12 | 07/15/21 18:52 | 8 | 0 |
-| ID10 | 07/15/21 14:12 | 07/16/21 08:11 | 7 | 1 |
-| ID10 | 07/15/21 14:12 | 07/17/21 12:08 | 4 | 2 |
-| ID10 | 07/15/21 14:12 | 07/17/21 17:45 | 2 | 2 |
+| record_id | surgery_dt     | painscore_dt   | painscore | POD |
+| --------- | ----------     | ------------   | --------- | --- |
+| ID1       | 03/22/21 10:31 | 03/22/21 11:40 | 5         | 0   |
+| ID1       | 03/22/21 10:31 | 03/22/21 15:21 | 7         | 0   |
+| ID1       | 03/22/21 10:31 | 03/23/21 09:22 | 6         | 1   |
+| ID1       | 03/22/21 10:31 | 03/24/21 19:22 | 3         | 2   |
+|           |                |                |           |     |
+| ID10      | 07/15/21 14:12 | 07/15/21 18:52 | 8         | 0   |
+| ID10      | 07/15/21 14:12 | 07/16/21 08:11 | 7         | 1   |
+| ID10      | 07/15/21 14:12 | 07/17/21 12:08 | 4         | 2   |
+| ID10      | 07/15/21 14:12 | 07/17/21 17:45 | 2         | 2   |
 
 
 Patients are asked to rate their pain on a scale from 0 to 10 after surgery. Here, 'POD' stands for postoperative day. For example, if a pain score is recorded on the day of surgery, it is referred to as POD0, and scores recorded on the following days are labeled POD1, POD2, and so on. POD0 represents the time between the end of surgery and midnight, while POD1 and POD2 each represent 24-hour periods. Based on this dataset, we can create a post-surgery pain score graph like this:
@@ -66,9 +70,9 @@ Since one point is greater than 7, while the other is between 4 and 7, we can sp
 
 The result you should have is like this:
 | record_id | AUC0_mild | AUC0_mod | AUC0_sev | Duration0 | ... |
-| --------- | ---- | --------- | ---- | --------- | ---- |
-| ID1 | 30.5 | 48.6 | 26.8 | 12 | ... |
-| ID2 | 34.6 | 12 | 79.2 | 20 | ... |
+| --------- | --------  | ---------| ----     | --------- | --- |
+| ID1       | 30.5      | 48.6     | 26.8     | 12        | ... |
+| ID2       | 34.6      | 12       | 79.2     | 20        | ... |
 
 We can combine this AUC output with the demographic information from each patient and explore some interesting questions, such as: is there a relationship between a patient's race, age, place of residence, or household income and their recovery after surgery? We actually did amazing work on a project like this and submitted papers on it. I can't wait for them to be published!
 
