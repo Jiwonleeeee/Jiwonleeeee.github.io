@@ -40,7 +40,7 @@ Patients are asked to rate their pain on a scale from 0 to 10 after surgery. Her
 If the task is calculating the whole region under the curve, then we can just simply add the individual trapezoid as we have recorded times and corresponding scores.
 <br/><img src='/images/auc-3.png'>
 
-However, what we need is the AUC for each POD. For POD1, for example, we first evaluate the area of the very first trapezoid, then we need the area of the trapezoid A. To do this, we need to know the value marked as 'X'. This can be achieved by using the trapezoid midsegment theorem (i.e, simply using the ratios). This is called 'imputation'. 
+However, what we need is the AUC for each POD. For POD0, for example, we first evaluate the area of the very first trapezoid, then we need the area of the trapezoid A. To do this, we need to know the value marked as 'X'. This can be achieved by using the trapezoid midsegment theorem (i.e, simply using the ratios). This is called 'imputation'. 
 <br/><img src='/images/auc-4.png'>
 
 What makes it hard for this algorithm to automatically calculate the AUC for each POD is the missing cases. For example, what if there's no observation for POD 1? Then there's no need for the imputation and we simply pull the observation closest to the boundaries and evaluate the area of rectangles, this is the example:
