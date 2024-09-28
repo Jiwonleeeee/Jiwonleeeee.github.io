@@ -4,7 +4,7 @@ collection: talks
 type: "Talk"
 permalink: /talks/pain-auc
 venue: ""
-date: 2022-06 - present
+date: 2024-09
 location: ""
 ---
 
@@ -37,11 +37,11 @@ However, what we need is the AUC for each POD. For POD1, for example, we first e
 ![auc4](./images/auc-4.png)
 
 What makes it hard for this algorithm to automatically calculate the AUC for each POD is the missing cases. For example, what if there's no observation for POD 1? Then there's no need for the imputation and we simply pull the observation closest to the boundaries and evaluate the area of rectangles, this is the example:
-![auc4](./images/auc-5.png)
+![auc5](./images/auc-5.png)
 
 
 There are several other considerations. When we typically have multiple points for each period, we use the for loop to automatic calculation (we should exclude the both end points because they might need an imputation or not, so it's little bit tricky). But it's also possible that there's only one point in a period, then it doesn't need a for loop and whether we evaluate the area of rectangle or trapezoid is determined whether we have another points in the next period (so this is only applied to the POD0 and POD1 as POD2 always need a rectangle for the last observation). In this example, since POD1 is missing, we only evaluate the rectangle area for POD0. You can see that with just one point, the AUC might not be enough to accurately represent the pain level.
-![auc4](./images/auc-6.png)
+![auc6](./images/auc-6.png)
 
 There are many other cases that can cause your code to fail, so it's important to keep debugging, fixing issues, and running tests until you get the correct results for all cases! When you succeed, you should have the result like this:
 |record_id|AUC0|Duration0|AUC1|Duration1|AUC2|Duration2|
@@ -54,7 +54,7 @@ This problem becomes a bit more complex when we want to categorize pain into mil
 
 
 Since one point is greater than 7, while the other is between 4 and 7, we can split it further into B1 (severe pain region) and B2 (moderate pain region). Using the trapezoid midsegment theorem, we can calculate the value for the red 'X' point. The area of B1 will then contribute to the severe pain AUC, and B2 to the moderate AUC.
-![auc7](./images/auc-8.png)
+![auc8](./images/auc-8.png)
 
 The result you should have is like this:
 |record_id|AUC0_mild|AUC0_mod|AUC0_sev|Duration0|...|
