@@ -4,7 +4,7 @@ collection: talks
 type: "Talk"
 permalink: /talks/pain-auc
 venue: "CCHMC"
-date: 2024-09
+date: 2024-09-28
 location: "Cincinnati"
 ---
 
