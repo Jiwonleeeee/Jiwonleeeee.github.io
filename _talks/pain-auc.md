@@ -18,6 +18,7 @@ Andersen, L. P. K., Gögenur, I., Torup, H., Rosenberg, J., & Werner, M. U. (201
 
 Suppose we have a dataset like this:
 
+
 | record_id | surgery_dt     | painscore_dt   | painscore | POD |
 | --------- | ----------     | ------------   | --------- | --- |
 | ID1       | 03/22/21 10:31 | 03/22/21 11:40 | 5         | 0   |
@@ -51,6 +52,7 @@ There are several other considerations. When we typically have multiple points f
 
 There are many other cases that can cause your code to fail, so it's important to keep debugging, fixing issues, and running tests until you get the correct results for all cases! When you succeed, you should have the result like this:
 
+
 | record_id | AUC0  | Duration0 | AUC1  | Duration1 | AUC2  | Duration2 |
 | --------- | ----  | --------- | ----  | --------- | ----  | --------- |
 | ID1       | 124.4 | 19        | 221.1 | 24        | 76.2  | 24        |
@@ -65,6 +67,7 @@ Since one point is greater than 7, while the other is between 4 and 7, we can sp
 
 
 The result you should have is like this:
+
 
 | record_id | AUC0_mild | AUC0_mod | AUC0_sev | Duration0 | ... |
 |-----------|-----------|----------|----------|-----------|-----|
