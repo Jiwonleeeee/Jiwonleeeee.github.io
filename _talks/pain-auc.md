@@ -3,9 +3,9 @@ title: "Area under the post-surgery pain scores curve"
 collection: talks
 type: "Talk"
 permalink: /talks/pain-auc
-venue: ""
+venue: "CCHMC"
 date: 2024-09
-location: ""
+location: "Cincinnati"
 ---
 
 The area-under-the-curve (AUC) is a common measure to quantify continuous variables recorded over time. Check these papers: 
