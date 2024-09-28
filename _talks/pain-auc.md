@@ -8,6 +8,7 @@ date: 2024-09-28
 location: "Cincinnati"
 ---
 
+R codes used for this project are posted [here](https://github.com/Jiwonleeeee/Pain_AUC/tree/main/AUC_functions)
 The area-under-the-curve (AUC) is a common measure to quantify continuous variables recorded over time. 
 
 Check these papers: 
