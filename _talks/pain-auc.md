@@ -23,7 +23,7 @@ Suppose we have a dataset like this:
 | ID1       | 03/22/21 10:31 | 03/22/21 15:21 | 7         | 0   |
 | ID1       | 03/22/21 10:31 | 03/23/21 09:22 | 6         | 1   |
 | ID1       | 03/22/21 10:31 | 03/24/21 19:22 | 3         | 2   |
-|           |                |                |           |     |
+|    ...    |       ...      |    ...         | ...       | ... |
 | ID10      | 07/15/21 14:12 | 07/15/21 18:52 | 8         | 0   |
 | ID10      | 07/15/21 14:12 | 07/16/21 08:11 | 7         | 1   |
 | ID10      | 07/15/21 14:12 | 07/17/21 12:08 | 4         | 2   |
@@ -49,10 +49,10 @@ There are several other considerations. When we typically have multiple points f
 <br/><img src='/images/auc-6.png'>
 
 There are many other cases that can cause your code to fail, so it's important to keep debugging, fixing issues, and running tests until you get the correct results for all cases! When you succeed, you should have the result like this:
-| record_id | AUC0 | Duration0 | AUC1 | Duration1 | AUC2 | Duration2 |
-| --------- | ---- | --------- | ---- | --------- | ---- | --------- |
-| ID1 | 124.4 |19 | 221.1 | 24 | 76.2 | 24 |
-| ID2 | 34.6 | 12 | 125.5 | 24 | 175.6 | 24 |
+| record_id | AUC0  | Duration0 | AUC1  | Duration1 | AUC2  | Duration2 |
+| --------- | ----  | --------- | ----  | --------- | ----  | --------- |
+| ID1       | 124.4 | 19        | 221.1 | 24        | 76.2  | 24        |
+| ID2       | 34.6  | 12        | 125.5 | 24        | 175.6 | 24        |
 
 This problem becomes a bit more complex when we want to categorize pain into mild, moderate, and severe levels. Typically, mild pain is defined as a score between 0-4, moderate between 4-7, and severe between 7-10. However, if you have the correct code for the simpler case, you can adjust it slightly. If the shape is a rectangle, you only need to focus on a single point, determine where it falls, and divide the region accordingly. If it’s a trapezoid, the approach changes slightly. For example, in the diagram, 'B' is the point we're interested in.
 <br/><img src='/images/auc-7.png'>
@@ -61,18 +61,13 @@ Since one point is greater than 7, while the other is between 4 and 7, we can sp
 <br/><img src='/images/auc-8.png'>
 
 
-| Entry            | Item   |                                                              |
-| --------         | ------ | ------------------------------------------------------------ |
-| [John Doe](#)    | 2016   | Description of the item in the list                          |
-| [Jane Doe](#)    | 2019   | Description of the item in the list                          |
-| [Doe Doe](#)     | 2022   | Description of the item in the list                          |
-
 
 The result you should have is like this:
 | record_id | AUC0_mild | AUC0_mod | AUC0_sev | Duration0 | ... |
-| --------- | --------  | ---------| ----     | --------- | --- |
+|-----------|-----------|----------|----------|-----------|-----|
 | ID1       | 30.5      | 48.6     | 26.8     | 12        | ... |
 | ID2       | 34.6      | 12       | 79.2     | 20        | ... |
+
 
 We can combine this AUC output with the demographic information from each patient and explore some interesting questions, such as: is there a relationship between a patient's race, age, place of residence, or household income and their recovery after surgery? We actually did amazing work on a project like this and submitted papers on it. I can't wait for them to be published!
 
