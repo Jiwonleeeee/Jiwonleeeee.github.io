@@ -8,7 +8,7 @@ date: 2024-09-01
 venue: 'TBD'
 slidesurl: ''
 paperurl: ''
-citation: 'Kumar, J., Atkinson, D., Chima, A., McLaughlin, L., Parikh, R., <b>Lee, J.</b>, Ding, L., Allen, J., Mende-Siedlecki, P., Mitchell, M., Chidambaran, V.. (submitted) The Journal of Pain.'
+citation: 'Kumar, J., Atkinson, D., Chima, A., McLaughlin, L., Parikh, R., <b>Lee, J.</b>, Ding, L., Allen, J., Mende-Siedlecki, P., Mitchell, M. & Chidambaran, V.. (submitted) The Journal of Pain.'
 ---
 
 
