@@ -19,6 +19,15 @@ This one might be the most appropriate for our data which has a complex temporal
 ## Latent Variable Models
 When we do not have a direct access to the \\p(x)\\, we use a latent variable $z$ on one condition that we can relatively easily model the \\p(x,z)\\.
 
+$$
+\displaylines{
+\nabla \cdot E= \frac{\rho}{\epsilon_0} \\\
+\nabla \cdot B=0 \\\
+\nabla \times E= -\partial_tB \\\
+\nabla \times B  = \mu_0 \left(J + \varepsilon_0 \partial_t E \right)
+}
+$$
 
+The default delimiters of `$$...$$` and `\\[...\\]` are supported for displayed mathematics, while `\\(...\\)` should be used for in-line mathematics (ex., \\(a^2 + b^2 = c^2\\))
 
 
