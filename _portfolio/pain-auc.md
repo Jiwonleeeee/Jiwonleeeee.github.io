@@ -1,11 +1,12 @@
 ---
 title: "Area under the post-surgery pain scores curve"
 collection: portfolio
-type: "Internship work"
-permalink: /portfolio/pain-auc
-venue: "CCHMC"
-date: 2024-09-28
-location: "Cincinnati"
+date: "2024-09-28"
+output: pdf_document
+venue: CCHMC
+type: Internship work
+location: Cincinnati
+permalink: "/portfolio/pain-auc"
 ---
 
 R codes used for this project are posted [here](https://github.com/Jiwonleeeee/Pain_AUC/tree/main/AUC_functions)
