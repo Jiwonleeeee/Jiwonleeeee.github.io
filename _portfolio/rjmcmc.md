@@ -10,6 +10,6 @@ R codes used for this project are posted [here](https://github.com/Jiwonleeeee/B
 
 
 This research focused on filtering active states from unlabeled wearable sensor measurements. I show you the result directly so that you can understand the motivation better.
-<br/><img src='/images/Display.pdf'>
+<br/><img src='/images/Display.png'>
 
 
