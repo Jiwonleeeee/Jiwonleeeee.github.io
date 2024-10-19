@@ -20,12 +20,30 @@ Current methods are using somewhat heuristic-based algorithms, for example, the 
 If we look at the raw data closely, however, you will notice that some measurements within the active states are as low as the measurements in the resting states. This is natural as each measurement was recorded every minute. One possible approach to handle this is to use feature extraction from a particularly specified window. However, this requires to determine the window size and the features to use (e.g. mean or variance). Our goal is to minimize the practitioners decision and to provide the direct tool to use without specifying things. 
 
 
-We designed an algorithm that does not require any specifications before running. The only thing it needs is the raw signal data directly collected from the device.
+We designed an algorithm that does not require any specifications before running. **The only thing it needs is the raw signal data directly collected from the device**.
 
 
 I will briefly describe the modeling procedure. Each active state and resting state are defined using the parameters \\(a_1,\ldots,a_B\\) and \\(r_1,\ldots,r_B\\). Since we need to define intervals, we treat an interval starting with \\(a_b\\) as an active state interval and with \\(r_b\\) as a resting state interval, as in this figure:
 <br/><img src='/images/statelabel.png'>
-To identify the active states is equal to find the location of these intervals \\(a_b,r_b\\) for \\(b=1,\ldots,B\\). The important factor to be considered is that **we need an inference not only about the locations but also the numbers of these intervals**, i.e., we do not have information about \\(B\\) as well. This is where the technique named **reversible jump MCMC** comes in. It allows this varying dimension of the parameter space during the inference procedure. 
+To identify the active states is equal to find the location of these intervals \\((a_b,r_b]\\) for \\(b=1,\ldots,B\\). The important factor to be considered is that **we need an inference not only about the locations but also the numbers of these intervals**, i.e., we do not have information about \\(B\\) as well. This is where the technique named **reversible jump MCMC** comes in. It allows this varying dimension of the parameter space during the inference procedure. 
+
+
+# Which information can help decide the location of the intervals? 
+We assume the likelihood functions for each active and resting states as multivariate normal and Poisson, respectively. For each possible move, we can compare the change in likelihood and accept that move if the change is significant enough, and run this algorithm multiple times until it converges. This is illustrated in this video. You can see that for extreme measurements, the state is barely changed but for ambiguous ones, 
+
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/b6m08gw1AYU" 
+title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
+
+
+
+
+
+
+
 
 
 
