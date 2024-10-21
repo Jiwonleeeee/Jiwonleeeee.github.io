@@ -1,7 +1,7 @@
 ---
 title: "A Bayesian approach to zero-inflated Poisson nonlinear regression with an application to excess relative risk models"
 collection: publications
-category: manuscripts
+category: books
 permalink: /publication/ZIP
 excerpt: "Writing in Progress"
 date: 2022-10-21
