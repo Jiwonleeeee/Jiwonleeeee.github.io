@@ -22,15 +22,15 @@ For the simplest setting, modeling this would involve using logistic regression 
 $$
 \begin{align}
 y_i &\sim \text{Ber}(\pi_i) \\
-\pi_i &= \text{logic}\left(\beta_0 + \beta_1 X_{i1} + \ldots + \beta_p X_{ip} \right)
+\pi_i &= \text{logit}^{-1}\left(\beta_0 + \beta_1 X_{i1} + \ldots + \beta_p X_{ip} \right)
 \end{align}
 $$
 
-What if there a suspicious point where the effect of some \\(X_{ij}\\) might change, i.e., \\(\beta_j\\) should change before and after this point. Let \\(\boldmath{\beta^t} = \beta_1^t,\ldots, \beta_p^t\\), then the idea is to use a different set of \\(\boldmath{\beta^t}) for each possible \\(t\\) as shown in the figure below:
+What if there a suspicious point where the effect of some \\(X_{ij}\\) might change, i.e., \\(\beta_j\\) should change before and after this point. Let \\(\boldsymbol{\beta^t} = \beta_1^t,\ldots, \beta_p^t\\), then the idea is to use a different set of \\(\boldsymbol{\beta^t}\\) for each possible \\(t\\) as shown in the figure below:
 <br/><img src='/images/beforedeath.png'>
-The parameters are \\(A,B, \boldmath{\beta^1}, \boldmath{\beta^2}, \boldmath{\beta^3}\\). Let's assume this is the initial state, and consider what happens if the model tries to combine the last two sections. Like the usual MCMC using the Metropolis-Hastings (MH) scheme, we need to propose possible values for the parameters for this move; i.e., we want to see if the scenario below makes more sense:
+The parameters are \\(A,B, \boldsymbol{\beta^1}, \boldsymbol{\beta^2}, \boldsymbol{\beta^3}\\). Let's assume this is the initial state, and consider what happens if the model tries to combine the last two sections. Like the usual MCMC using the Metropolis-Hastings (MH) scheme, we need to propose possible values for the parameters for this move; i.e., we want to see if the scenario below makes more sense:
 <br/><img src='/images/afterdeath.png'>
-Let \\(\theta=(A,B, \boldmath{\beta^1}, \boldmath{\beta^2}, \boldmath{\beta^3})\\) be a set of the parameters at a current iteration \\(s\\), and \\(\hat{\theta}=(A, \boldmath{\beta^1}, \boldmath{\beta'^2})\\) be the proposed parameter corresponding the above scenario at \\(s+1\\). 
+Let \\(\theta=(A,B, \boldsymbol{\beta^1}, \boldsymbol{\beta^2}, \boldsymbol{\beta^3})\\) be a set of the parameters at a current iteration \\(s\\), and \\(\hat{\theta}=(A, \boldsymbol{\beta^1}, \boldsymbol{\beta'^2})\\) be the proposed parameter corresponding the above scenario at \\(s+1\\). 
 
 The basic idea is similar to the original MH step, i.e., we are going to evaluate the acceptance probability for this particular proposal. The proposal ratio needs adjustment, and additional terms are needed to account for the difference in dimension between \\(\hat{\theta}\\) and \\(\theta\\), but the procedure remains the same.
 <br/><img src='/images/accprob.png'>
