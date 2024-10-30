@@ -21,8 +21,8 @@ For the simplest setting, modeling this would involve using logistic regression 
 
 $$
 \begin{align}
-y_i &\sim \text{Ber}(\pi_i) \\
-\pi_i &= \text{logit}^{-1}\left(\beta_0 + \beta_1 X_{i1} + \ldots + \beta_p X_{ip} \right)
+y_i|X_i &\sim \text{Ber}(\pi_i(X_i)) \\
+\pi_i(X_i) &= \text{logit}^{-1}\left(\beta_0 + \beta_1 X_{i1} + \ldots + \beta_p X_{ip} \right)
 \end{align}
 $$
 
