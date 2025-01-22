@@ -21,7 +21,7 @@ repository               : "Jiwonleeeee/Jiwonleeeee.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "myprofile.JPEG"
+  avatar           : "myprofile.jpg"
   name             : "Jiwon Lee"
   pronouns         : # example: "she/her"  
   bio              : "Ph.d. candidate in Statistics"
